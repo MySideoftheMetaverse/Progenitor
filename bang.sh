@@ -3,8 +3,7 @@
 # Automatically shuts the script down when you encounter an error
 set -e
 
-# Install Rust
-curl https://sh.rustup.rs -s | sh 
+
 
 #Install Brave
 sudo apt install curl
@@ -12,6 +11,9 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
 sudo apt install brave-browser
+
+# Install Rust
+curl https://sh.rustup.rs -s | sh 
 
 #Install desktop apps
 sudo apt install telegram-desktop git wget vlc snapd gramps python3-pip caffeine flatpak freerdp2-x11 virt-manager libclang-dev qbittorrent
