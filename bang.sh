@@ -10,6 +10,8 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 sudo apt update
 sudo apt install brave-browser
 
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 # Install Rust
 curl https://sh.rustup.rs -s | sh 
 
