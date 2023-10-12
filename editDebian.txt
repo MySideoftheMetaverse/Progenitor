@@ -1,0 +1,43 @@
+A quick guide will be something like:
+https://wiki.debian.org/Derivatives/Guidelines#De-.2FRe-branding
+
+
+Use this command to search for "Debian" in the filesystem:
+grep -rli Debian /etc | sort
+
+These likely need edits:
+/etc/debian_version
+/etc/os-release
+/etc/hosts
+/etc/grub.d/05_debian_theme
+/etc/grub.d/backup/boot_grub/grub.cfg
+/etc/grub.d/backup/default_grub
+/etc/grub.d/backup/etc_grub_d/05_debian_theme
+/etc/issue
+/etc/dpkg/origins/default 
+/etc/issue.net
+/etc/mailname
+/etc/motd
+/etc/postfix/main.cf
+/usr/lib/os-release 
+/etc/printcap
+/usr/share/base-files/motd 
+/etc/ssmtp/ssmtp.conf
+/etc/hostname
+/etc/hosts
+/etc/penguins-eggs.d/derivatives.yaml
+/etc/xdg/kcm-about-distrorc
+/etc/xdg/kickoffrc
+/etc/penguins-eggs.d/eggs.yaml
+/etc/penguins-eggs.d/distros/bookworm/calamares/modules/users.yml
+/etc/penguins-eggs.d/distros/bookworm/calamares/modules/welcome.yml
+/etc/penguins-eggs.d/distros/bookworm/calamares/modules/bootloader.yml
+/etc/calamares/branding/eggs/branding.desc
+/etc/calamares/branding/eggs/show.qml
+/etc/calamares/modules/bootloader.conf
+/etc/calamares/modules/users.conf
+/etc/calamares/settings.conf
+/etc/default/grub
+/etc/default/grub.d/init-select.cfg
+/etc/default/useradd
+/etc/dpkg/origins/debian
