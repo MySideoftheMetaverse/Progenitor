@@ -6,6 +6,9 @@ set -e
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 
 sudo apt install command-not-found apt-file
+sudo apt install plocate && sudo /etc/cron.daily/plocate
+
+
 wget https://golang.org/dl/go1.20.2.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.20.2.linux-amd64.tar.gz
 echo "export PATH=/usr/local/go/bin:${PATH}" | sudo tee -a $HOME/.profile
