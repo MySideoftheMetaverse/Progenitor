@@ -6,9 +6,12 @@ set -e
 sudo apt install curl libxcb-glx0-dev command-not-found apt-file plocate libfontconfig-dev apt-transport-https dialog unzip xmlstarlet libudev-dev libxkbcommon-dev libsdl2-dev libasound2-dev libusb-1.0-0-dev libx11-xcb-dev libpulse-dev libvulkan-dev libavcodec-dev libavformat-dev libavdevice-dev python3-pyudev telegram-desktop git wget vlc snapd gramps python3-pip caffeine flatpak freerdp2-x11 virt-manager libclang-dev qbittorrent
 pip install psutil pyyaml
 sudo /etc/cron.daily/plocate
-
 #Installs Git LFS
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+
+#Installs Flatpak
+ apt install flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 #Installs Go 
 wget https://golang.org/dl/go1.20.2.linux-amd64.tar.gz
@@ -28,11 +31,24 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 sudo apt update
 sudo apt install brave-browser
 
-#Adds Flathub repo to Flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
 # Install Rust
 curl https://sh.rustup.rs -s | sh 
+#Install Jellyfin
+curl https://repo.jellyfin.org/install-debuntu.sh | sudo bash
+sudo setfacl -m u:jellyfin:rx /media/sean.
+
+#Install Notifiarr
+curl -s https://golift.io/repo.sh | sudo bash -s - notifiarr
+
+#Install NTFY
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://archive.heckel.io/apt/pubkey.txt | sudo gpg --dearmor -o /etc/apt/keyrings/archive.heckel.io.gpg
+sudo sh -c "echo 'deb [arch=amd64 signed-by=/etc/apt/keyrings/archive.heckel.io.gpg] https://archive.heckel.io/apt debian main' \
+    > /etc/apt/sources.list.d/archive.heckel.io.list"  
+sudo apt update
+sudo apt install ntfy
+sudo systemctl enable ntfy
+sudo systemctl start ntfy
 
 #Install h8mail
 git clone https://github.com/khast3x/h8mail.git
@@ -51,28 +67,7 @@ sudo ./addaura.sh
 
 #Install RetroPie
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-
-#Install WinApps
-git clone https://github.com/Fmstrat/winapps.git
-
-#Install Jellyfin
-curl https://repo.jellyfin.org/install-debuntu.sh | sudo bash
-sudo setfacl -m u:jellyfin:rx /media/sean.
-
-
-#Install Notifiarr
-curl -s https://golift.io/repo.sh | sudo bash -s - notifiarr
-
-#Install NTFY
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://archive.heckel.io/apt/pubkey.txt | sudo gpg --dearmor -o /etc/apt/keyrings/archive.heckel.io.gpg
-sudo sh -c "echo 'deb [arch=amd64 signed-by=/etc/apt/keyrings/archive.heckel.io.gpg] https://archive.heckel.io/apt debian main' \
-    > /etc/apt/sources.list.d/archive.heckel.io.list"  
-sudo apt update
-sudo apt install ntfy
-sudo systemctl enable ntfy
-sudo systemctl start ntfy
-
+sudo ./RetroPie-Setup/retropie_setup.sh
 
 
 
