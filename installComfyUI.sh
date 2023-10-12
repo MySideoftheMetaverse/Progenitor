@@ -7,3 +7,5 @@ python -m pip install torch torchvision torchaudio –extra-index-url https://do
 get -c https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt -P ./models/checkpoints/
 
 python3 main.py --cpu --dont-upcast-attention --auto-launch --disable-cuda-malloc --disable-xformers 
+
+
