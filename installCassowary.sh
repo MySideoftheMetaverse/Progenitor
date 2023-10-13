@@ -24,7 +24,7 @@ echo "uri_default = \"qemu:///system\"" >> ~/.config/libvirt/libvirt.conf
 
 wget https://github.com/casualsnek/cassowary/releases/download/0.6/cassowary-0.6-py3-none-any.whl
 wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
-
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=FILENAME ' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=FILENAME -O Win10.iso && rm -rf /tmp/cookies.txt
 
 sudo apt install python3 python3-pip freerdp2-x11
 pip3 install PyQt5 --break-system-packages
