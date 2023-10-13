@@ -1,4 +1,5 @@
 A quick guide will be something like:
+
 https://wiki.debian.org/Derivatives/Guidelines#De-.2FRe-branding
 
 
@@ -6,6 +7,7 @@ Use this command to search for "Debian" in the filesystem:
 grep -rli Debian /etc | sort
 
 These likely need edits:
+
 /etc/debian_version
 /etc/os-release
 /etc/hosts
@@ -29,6 +31,11 @@ These likely need edits:
 /etc/xdg/kcm-about-distrorc
 /etc/xdg/kickoffrc
 /etc/penguins-eggs.d/eggs.yaml
+/etc/default/grub
+/etc/default/grub.d/init-select.cfg
+/etc/default/useradd
+/etc/dpkg/origins/debian
+
 /etc/penguins-eggs.d/distros/bookworm/calamares/modules/users.yml
 /etc/penguins-eggs.d/distros/bookworm/calamares/modules/welcome.yml
 /etc/penguins-eggs.d/distros/bookworm/calamares/modules/bootloader.yml
@@ -37,7 +44,3 @@ These likely need edits:
 /etc/calamares/modules/bootloader.conf
 /etc/calamares/modules/users.conf
 /etc/calamares/settings.conf
-/etc/default/grub
-/etc/default/grub.d/init-select.cfg
-/etc/default/useradd
-/etc/dpkg/origins/debian
