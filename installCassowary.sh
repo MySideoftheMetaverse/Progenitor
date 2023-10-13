@@ -26,7 +26,7 @@ wget https://github.com/casualsnek/cassowary/releases/download/0.6/cassowary-0.6
 wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
 
 
-sudo pacman -S python3 python3-pip freerdp libvirt-python
+sudo apt install python3 python3-pip freerdp2-x11
 pip3 install PyQt5 --break-system-packages
 
 pip install cassowary* --break-system-packages
